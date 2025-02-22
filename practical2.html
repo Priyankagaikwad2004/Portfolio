@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ece9e6, #ffffff);
+            color: #333;
+        }
+        .sidebar {
+            background: linear-gradient(45deg, #343a40, #6c757d);
+            color: white;
+            height: 100vh;
+            padding: 20px;
+            position: fixed;
+            width: 250px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: width 0.6s ease;
+        }
+        .sidebar h3 {
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .sidebar.collapsed {
+            width: 70px;
+        }
+        .sidebar.collapsed h3,
+        .sidebar.collapsed nav ul li span {
+            display: none;
+        } 
+        .sidebar nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar nav ul li {
+            margin: 15px 0;
+        }
+        .sidebar nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .sidebar nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .toggle-btn {
+            font-size: 24px;
+            cursor: pointer;
+            margin-bottom: 20px;
+            display: block;
+            text-align: right;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            animation: fadeIn 1s;
+        }
+        .sidebar.collapsed + .content {
+            margin-left: 90px;
+        }
+        .skills .icon-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .skills .icon-card:hover {
+            transform: scale(1.05);
+        }
+        .skills i {
+            font-size: 36px;
+            color: #343a40;
+            margin-bottom: 10px;
+        }
+        .section h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #343a40;
+        }
+        .section {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <span class="toggle-btn" onclick="toggleSidebar()">&#9776;</span>
+        <h3>Portfolio</h3>
+        <nav>
+            <ul>
+                <li><a href="#about"><i class="fas fa-user"></i> <span>About</span></a></li>
+                <li><a href="#skills"><i class="fas fa-code"></i> <span>Skills</span></a></li>
+                <li><a href="#projects"><i class="fas fa-briefcase"></i> <span>Projects</span></a></li>
+                <li><a href="#internships"><i class="fas fa-building"></i> <span>Internships</span></a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="content">
+        <div id="about" class="section about">
+            <h2>About</h2>
+            <p>I am Priyanka Uddhav Gaikwad, a passionate and versatile developer with a strong foundation in web development, Java programming, and database management. I excel at designing and implementing responsive, visually appealing websites, including e-commerce platforms and user authentication systems. I am committed to continuous learning and leveraging technical expertise to solve real-world problems effectively.</p>
+        </div>
+
+        <div id="skills" class="section skills">
+            <h2>Skills</h2>
+            <div class="row text-center">
+                <div class="col-md-3 icon-card">
+                    <i class="fab fa-html5"></i>
+                    <p>HTML</p>
+                </div>
+                <div class="col-md-3 icon-card">
+                    <i class="fab fa-css3-alt"></i>
+                    <p>CSS</p>
+                </div>
+                <div class="col-md-3 icon-card">
+                    <i class="fab fa-js"></i>
+                    <p>JavaScript</p>
+                </div>
+                <div class="col-md-3 icon-card">
+                    <i class="fab fa-react"></i>
+                    <p>React</p>
+                </div>
+                <div class="col-md-3 icon-card">
+                    <i class="fab fa-java"></i>
+                    <p>Java</p>
+                </div>
+                <div class="col-md-3 icon-card">
+                    <i class="fas fa-database"></i>
+                    <p>MySQL</p>
+                </div>
+                <div class="col-md-3 icon-card">
+                    <i class="fab fa-php"></i>
+                    <p>PHP</p>
+                </div>
+                <div class="col-md-3 icon-card">
+                    <i class="fas fa-code"></i>
+                    <p>Problem-Solving</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="projects" class="section projects">
+            <h2>Projects</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Farmer’s Website</h5>
+                    <p>Developed a feature-rich Farmer's Website using HTML, CSS, JavaScript, and Bootstrap for the front-end, PHP for back-end processing, and MySQL for database management. The project includes user authentication, a responsive design, and interactive features such as product profiles and account management.</p>
+                </div>
+                <div class="col-md-6">
+                    <h5>Quiz Application Using Java</h5>
+                    <p>Created a Quiz Application using Java with features like questions, options, and score tracking. Designed for easy use and scalability.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="internships" class="section internships">
+            <h2>Internships</h2>
+            <ul>
+                <li>Software Development Intern at Zensar - Focused on Java and Advanced Java through ESD Training.</li>
+            </ul>
+        </div>
+
+        <div id="contact" class="section contact">
+            <h2>Contact</h2>
+            <div class="text-center">
+                <p>Email: <a href="mailto:priya937027@gmail.com">priya937027@gmail.com</a></p>
+                <p>Mobile: +91-9370275325</p>
+                <p>Address: Pune, Maharashtra</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('collapsed');
+        }
+    </script>
+</body>
+</html>
